@@ -35,11 +35,16 @@ public class plyrMov : MonoBehaviour
     public int currentPointIndex = 0;
     public int iceSpeed;
 
+    [Header("Animation Stuff")]
+    public Animator animator;
+
+
     void Start()
     {
         theRB.freezeRotation = true;
         plyrAccel = 1f;
         atBase = 0;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -63,6 +68,7 @@ public class plyrMov : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || isSliding))
         {
             Debug.Log("This is working");
+            animator.SetBool("isJumping", isGrounded);
             Jump();
         }   
 
@@ -70,6 +76,21 @@ public class plyrMov : MonoBehaviour
         {
             FastFall();
         }
+
+        if (horizontalInput != 0 && isGrounded)
+        {
+            if (theRB.velocity.x > 0)
+            {
+                animator.SetFloat("xVelocity", theRB.velocity.x);
+            }
+            else
+            {
+                animator.SetFloat("xVelocity", theRB.velocity.x - 2 * theRB.velocity.x);
+            }
+        }
+
+        animator.SetFloat("yVelocity", theRB.velocity.y);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -85,6 +106,10 @@ public class plyrMov : MonoBehaviour
                 Debug.Log("Found a LineRenderer on" + other.gameObject.name);
             }
         }
+
+        isGrounded = true;
+        animator.SetBool("isJumping", !isGrounded);
+
     }
 
     void OnTriggerStay2D(Collider2D other)
