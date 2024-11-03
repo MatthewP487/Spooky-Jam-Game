@@ -38,6 +38,7 @@ public class plyrMov : MonoBehaviour
     [Header("Animation Stuff")]
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public bool left = false;
 
 
     void Start()
@@ -67,7 +68,8 @@ public class plyrMov : MonoBehaviour
         {
             plyrAccel -= accelRate * Time.deltaTime;
         }
-        
+
+        // Make sure grounded and not sliding to jump
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || isSliding))
         {
             Debug.Log("This is working");
@@ -75,43 +77,25 @@ public class plyrMov : MonoBehaviour
             animator.SetBool("isJumping", true);
         }
 
-        if (isGrounded && Mathf.Approximately(theRB.velocity.y, 0f))
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
-        }
-        else if (!isGrounded && theRB.velocity.y < 0)
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", true);
-        }
-        else if (theRB.velocity.y > 0)
-        {
-            animator.SetBool("isFalling", false);
-        }
-
-
-        if (verticalInput < 0)
+        // Check for fast fall
+        if (verticalInput < 0  && (!isGrounded || !isSliding))
         {
             FastFall();
         }
 
-        /* if (horizontalInput != 0 && isGrounded)
-        {
-            if (theRB.velocity.x > 0)
-            {
-                animator.SetFloat("xVelocity", theRB.velocity.x);
-            }
-            else
-            {
-                animator.SetFloat("xVelocity", theRB.velocity.x - 2 * theRB.velocity.x);
-            }
-        }
-        */
+        // Changes the sprite from left to right
+        if (theRB.velocity.x < 0)
+            left = true;
+        else if (theRB.velocity.x > 0)
+            left = false;
 
-        spriteRenderer.flipX = theRB.velocity.x < 0f;
+        spriteRenderer.flipX = left;
 
-        animator.SetFloat("xVelocity", theRB.velocity.x);
+        // If sliding activate the animation
+        if (isSliding)
+            animator.SetBool("isSliding", true);
+
+        animator.SetFloat("xVelocity", Mathf.Abs(theRB.velocity.x));
         animator.SetFloat("yVelocity", theRB.velocity.y);
 
     }
@@ -132,7 +116,7 @@ public class plyrMov : MonoBehaviour
 
         isGrounded = true;
         animator.SetBool("isJumping", false);
-        animator.SetBool("isFalling", false);
+        animator.SetBool("isSliding", false);
 
     }
 

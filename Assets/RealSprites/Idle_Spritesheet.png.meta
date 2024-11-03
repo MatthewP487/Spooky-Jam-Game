@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca4fd4cea6697eb45be77bac1187bf6e
+guid: 37188c6ed98b2a947854d36a14b72e45
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run_1_Spritesheet_0
+      name: Idle_Spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,35 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee93dfa670efaad4481f0357e7d8daa1
-      internalID: 612043515
+      spriteID: 3793d9917263f92419a1c98b8bf6c477
+      internalID: -1452958571
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run_1_Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 299e8cdddf26a4c49943deb52ff33c69
-      internalID: -143070984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_1_Spritesheet_2
+      name: Idle_Spritesheet_1
       rect:
         serializedVersion: 2
         x: 0
@@ -153,29 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b78c3d19a40e1a4593be4725c5086b4
-      internalID: -195537320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run_1_Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84856e4010e6e9b4495474058c48348c
-      internalID: 1408330437
+      spriteID: d2413a51bb20a194db93b81b39fd1fe0
+      internalID: 1894979864
       vertices: []
       indices: 
       edges: []
@@ -191,10 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run_1_Spritesheet_0: 612043515
-      Run_1_Spritesheet_1: -143070984
-      Run_1_Spritesheet_2: -195537320
-      Run_1_Spritesheet_3: 1408330437
+      Idle_Spritesheet_0: -1452958571
+      Idle_Spritesheet_1: 1894979864
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

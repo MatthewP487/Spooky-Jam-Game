@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,10 +100,10 @@ TextureImporter:
       name: Jumping_1_Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 128
-        width: 72
-        height: 88
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,8 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcd901333588fb4468273ca7f4b57ba9
-      internalID: 2146321707
+      spriteID: 28927d3fe23d7ed4c8593b400ec1a789
+      internalID: 297978216
       vertices: []
       indices: 
       edges: []
@@ -121,10 +121,10 @@ TextureImporter:
       name: Jumping_1_Spritesheet_1
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
-        width: 72
-        height: 104
+        x: 16
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5182157db646d8f41acc085b05a20b02
-      internalID: -1794818521
+      spriteID: 68f0ba5279be6f5488aab80d2704b9b2
+      internalID: -1971856421
       vertices: []
       indices: 
       edges: []
@@ -142,10 +142,10 @@ TextureImporter:
       name: Jumping_1_Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 16
-        width: 80
-        height: 96
+        x: 0
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4433a42aaa4734444afb5e90463f78d0
-      internalID: -2101217762
+      spriteID: 3dd2f7b7113a99a47a03b165d8d798c8
+      internalID: 443622328
       vertices: []
       indices: 
       edges: []
@@ -163,10 +163,10 @@ TextureImporter:
       name: Jumping_1_Spritesheet_3
       rect:
         serializedVersion: 2
-        x: 152
+        x: 16
         y: 0
-        width: 64
-        height: 88
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,8 +174,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f0d9c5988e5c224aa19995f92485824
-      internalID: 1702644121
+      spriteID: d71f05bb3f1286645bdb7ea6f37dc01e
+      internalID: -1891981292
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jumping_1_Spritesheet_0: 2146321707
-      Jumping_1_Spritesheet_1: -1794818521
-      Jumping_1_Spritesheet_2: -2101217762
-      Jumping_1_Spritesheet_3: 1702644121
+      Jumping_1_Spritesheet_0: 297978216
+      Jumping_1_Spritesheet_1: -1971856421
+      Jumping_1_Spritesheet_2: 443622328
+      Jumping_1_Spritesheet_3: -1891981292
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
