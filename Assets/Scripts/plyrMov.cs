@@ -37,13 +37,16 @@ public class plyrMov : MonoBehaviour
 
     [Header("Animation Stuff")]
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
 
     void Start()
     {
+        theRB = GetComponent<Rigidbody2D>();
         theRB.freezeRotation = true;
         plyrAccel = 1f;
         atBase = 0;
+        spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
@@ -68,16 +71,32 @@ public class plyrMov : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && (isGrounded || isSliding))
         {
             Debug.Log("This is working");
-            animator.SetBool("isJumping", isGrounded);
             Jump();
-        }   
+            animator.SetBool("isJumping", true);
+        }
+
+        if (isGrounded && Mathf.Approximately(theRB.velocity.y, 0f))
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+        }
+        else if (!isGrounded && theRB.velocity.y < 0)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", true);
+        }
+        else if (theRB.velocity.y > 0)
+        {
+            animator.SetBool("isFalling", false);
+        }
+
 
         if (verticalInput < 0)
         {
             FastFall();
         }
 
-        if (horizontalInput != 0 && isGrounded)
+        /* if (horizontalInput != 0 && isGrounded)
         {
             if (theRB.velocity.x > 0)
             {
@@ -88,7 +107,11 @@ public class plyrMov : MonoBehaviour
                 animator.SetFloat("xVelocity", theRB.velocity.x - 2 * theRB.velocity.x);
             }
         }
+        */
 
+        spriteRenderer.flipX = theRB.velocity.x < 0f;
+
+        animator.SetFloat("xVelocity", theRB.velocity.x);
         animator.SetFloat("yVelocity", theRB.velocity.y);
 
     }
@@ -108,7 +131,8 @@ public class plyrMov : MonoBehaviour
         }
 
         isGrounded = true;
-        animator.SetBool("isJumping", !isGrounded);
+        animator.SetBool("isJumping", false);
+        animator.SetBool("isFalling", false);
 
     }
 
